@@ -20,6 +20,15 @@ NVIDIA
 
 AMD
 
+阿里
+qwen
+千问
+通义千问
+
+kimi
+
+deepseek
+
 谷歌
 google
 gemini
@@ -61,5 +70,15 @@ ai
 科技
 
 核能
+
+恒生科技
+
+纳斯达克
+
+标普
+
+黄金
+
+白银
 
 
