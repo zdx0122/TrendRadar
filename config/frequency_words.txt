@@ -39,6 +39,7 @@ Anthropic
 ai
 !gai
 人工智能
+模型
 
 电池
 固态电池
