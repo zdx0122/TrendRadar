@@ -1,7 +1,7 @@
 <div align="center" id="trendradar">
 
 <a href="https://github.com/sansan0/TrendRadar" title="TrendRadar">
-  <img src="/_image/banner.jpg" alt="TrendRadar Banner" width="50%">
+  <img src="/_image/banner.webp" alt="TrendRadar Banner" width="80%">
 </a>
 
 🚀 Deploy in <strong>30 seconds</strong> — Your Smart Trending News Assistant
@@ -13,7 +13,7 @@
 [![GitHub Stars](https://img.shields.io/github/stars/sansan0/TrendRadar?style=flat-square&logo=github&color=yellow)](https://github.com/sansan0/TrendRadar/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/sansan0/TrendRadar?style=flat-square&logo=github&color=blue)](https://github.com/sansan0/TrendRadar/network/members)
 [![License](https://img.shields.io/badge/license-GPL--3.0-blue.svg?style=flat-square)](LICENSE)
-[![Version](https://img.shields.io/badge/version-v3.1.0-blue.svg)](https://github.com/sansan0/TrendRadar)
+[![Version](https://img.shields.io/badge/version-v3.1.1-blue.svg)](https://github.com/sansan0/TrendRadar)
 [![MCP](https://img.shields.io/badge/MCP-v1.0.2-green.svg)](https://github.com/sansan0/TrendRadar)
 
 [![WeWork](https://img.shields.io/badge/WeWork-Notification-00D4AA?style=flat-square)](https://work.weixin.qq.com/)
@@ -251,6 +251,26 @@ Transform from "algorithm recommendation captivity" to "actively getting the inf
 - **Major Version Upgrade**: Upgrading from v1.x to v2.y, recommend deleting existing fork and re-forking to save effort and avoid config conflicts
 
 
+### 2025/11/22 - v3.1.1
+
+- **Fixed data anomaly crash issue**: Resolved `'float' object has no attribute 'lower'` error encountered by some users in GitHub Actions environment
+- Added dual protection mechanism: Filter invalid titles (None, float, empty strings) at data acquisition stage, with type checking at function call sites
+- Enhanced system stability to ensure normal operation even when data sources return abnormal formats
+
+**Upgrade Instructions** (GitHub Fork Users):
+- Required update: `main.py`
+- Recommended: Use minor version upgrade method - copy and replace the file above
+
+
+### 2025/11/18 - mcp-v1.0.2
+
+  **MCP Module Update:**
+  - Fix issue where today's news query may return articles from past dates
+
+
+<details>
+<summary><strong>👉 Click to expand: Historical Updates</strong></summary>
+
 ### 2025/11/20 - v3.1.0
 
 - **Added Personal WeChat Push Support**: WeWork application can push to personal WeChat without installing WeWork APP
@@ -263,17 +283,6 @@ Transform from "algorithm recommendation captivity" to "actively getting the inf
 - Required updates: `main.py`, `config/config.yaml`
 - Optional update: `.github/workflows/crawler.yml` (if using GitHub Actions)
 - Recommended: Use minor version upgrade method - copy and replace the files above
-
-
-
-### 2025/11/18 - mcp-v1.0.2
-
-  **MCP Module Update:**
-  - Fix issue where today's news query may return articles from past dates
-
-
-<details>
-<summary><strong>👉 Click to expand: Historical Updates</strong></summary>
 
 ### 2025/11/12 - v3.0.5
 
@@ -841,8 +850,16 @@ frequency_words.txt file added **required word** feature, using + sign
    | **126 Mail** | 126.com | smtp.126.com | 465 | SSL |
    | **Sina Mail** | sina.com | smtp.sina.com | 465 | SSL |
    | **Sohu Mail** | sohu.com | smtp.sohu.com | 465 | SSL |
+   | **189 Mail** | 189.cn | smtp.189.cn | 465 | SSL |
 
    > **Auto-detect**: When using above emails, no need to manually configure `EMAIL_SMTP_SERVER` and `EMAIL_SMTP_PORT`, system auto-detects.
+   >
+   > **Feedback Notice**:
+   > - If you successfully test with **other email providers**, please open an [Issue](https://github.com/sansan0/TrendRadar/issues) to let us know, we'll add to support list
+   > - If above email configurations are incorrect or unusable, please also open an [Issue](https://github.com/sansan0/TrendRadar/issues) for feedback to help improve the project
+   >
+   > **Special Thanks**:
+   > - Thanks to [@DYZYD](https://github.com/DYZYD) for contributing 189 Mail (189.cn) configuration and completing self-send-receive testing ([#291](https://github.com/sansan0/TrendRadar/issues/291))
 
    **Common Email Settings:**
 
